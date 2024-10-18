@@ -1,0 +1,63 @@
+Hi Everyone, #90DaysOfDevOps 
+#Day 3 -Basic Linux Commands with a Twist.
+
+Task1: #View the content of a file and display line numbers.
+Commands-#cat This is used to concatenate and display files on the terminal. 
+#cat –n  display  line numbers to all lines.
+Solution- #cat file1 
+#cat –n file1
+
+Task2: #Change the access permissions of files to make them readable, writable, and executable by the owner only.
+Commands- #Chmod: This command is used to change the access
+permissions of files and directories. 
+Solution- #chmod 744 file1 (owner full permission)
+
+Task3: #Check the last 10 commands you have run.
+Commands- #history It show list of previously used commands
+#Tail: This command prints the last N number of data
+Solution- #history | tail -10
+
+Task4: #Remove a directory and all its contents.
+Commands- #rm Remove files and directories.
+#rm –r  Remove directories recursively. 
+#rm –f forcefully deletes the file without confirmation.
+Solution- #rm –r file1
+
+Task5: #Create a fruits.txt file, add content (one fruit per line), and display the content.
+Commands- #Vim: This is a text editor used in Linux. 
+Solution- #vim fruits.txt
+#cat fruits.txt
+
+Task6 #Add content in devops.txt (one in each line) - Apple, Mango, Banana, Cherry, Kiwi, Orange, Guava. Then, append "Pineapple" to the end of the file.
+Commands- #echo This is to display lines of text or strings.
+#cmd>>file appends the data of an existing file.
+Solution- #vim devops.txt
+#echo "Pineapple" >> devops.txt
+
+Task7 #Show the first three fruits from the file in reverse order.
+Commands- #head This command is used to output the first part of files.
+#tac This command reverses the order of the lines.
+Solution- #head -n 3 devops.txt | tac
+
+Task8 #Show the bottom three fruits from the file, and then sort them alphabetically.
+Commands- #tail This command outputs the last part of files.
+#sort This command sorts the input lines alphabetically.
+Solution- tail -n 3 devops.txt | sort
+
+Task9 #Create another file Colors.txt, add content (one color per line), and display the content.
+Commands – #vim This is a command-line text editor. 
+Solution- #vim Colors.txt
+
+Task10 #Add content in Colors.txt (one in each line) - Red, Pink, White, Black, Blue, Orange, Purple, Grey. Then, prepend "Yellow" to the beginning of the file.
+Commands – #sed This is the stream editor for filtering and transforming text.
+Solution- #sed -i '1iyellow' Colors.txt
+
+Task11 #Find and display the lines that are common between fruits.txt and Colors.txt.
+Commands- #comm This command compares two sorted files line by line.
+#<(sort file_name) This uses process substitution, allowing you to sort file on the fly without creating a temporary file
+Solution-#comm -12 <(sort fruits.txt) <(sort Colors.txt)
+
+Task12 #Count the number of lines, words, and characters in both fruits.txt and Colors.txt.
+Commands- #wc This command counts lines, words, and characters.
+Solution-#wc fruits.txt Colors.txt
+
