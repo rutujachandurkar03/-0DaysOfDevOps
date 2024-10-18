@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Display usage information
+function display_usage {
+    echo "Usage: $0 /path/to/source_directory"
+}
+
+# Check if a valid directory path is provided as a command-line argument
+if [ $# -eq 0 ] || [ ! -d "$1" ]; then
+    echo "Error: Please provide a valid directory path as a command-line argument."
+    display_usage
+    exit 1
+fi
+
+
+
+# Assign source directory from command-line argument
+source_dir="$1"
+backup_dir="${source_dir}/backups"
+
+# Create the backup directory if it doesn't exist
+mkdir -p "$backup_dir"
+
+# Function to create a timestamped backup and zip it
+
+    timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
+    backup_file="${backup_dir}/backup_${timestamp}.zip"
+
+    # Create a zip file of the source directory, excluding the backup folder itself
+    zip -r "$backup_file" "$source_dir" --exclude "${source_dir}/backups/*" >/dev/null
+    if [ $? -eq 0 ]; then
+        echo "Backup created successfully: $backup_file"
+    else
+        echo "Error: Failed to create backup."
+    fi
+
+# Function to perform rotation and keep only the last 3 backups
+
+    backups=($(ls -t "${backup_dir}/backup_"*.zip 2>/dev/null))
+
+    if [ "${#backups[@]}" -gt 3 ]; then
+        backups_to_remove=("${backups[@]:3}")
+
+        for backup in "${backups_to_remove[@]}"; do
+            rm -f "$backup"
+            echo "Old backup removed: $backup"
+        done
+    fi
