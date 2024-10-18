@@ -1,0 +1,39 @@
+
+👉Task 1: Comments
+In bash scripts, comments are used to add explanatory notes or disable certain lines of code. Your task is to create a bash script with comments explaining what the script does.
+Task 2: Echo
+The echo command is used to display messages on the terminal. Your task is to create a bash script that uses echo to print a message of your choice.
+👉Task 3: Variables
+Variables in bash are used to store data and can be referenced by their name. Your task is to create a bash script that declares variables and assigns values to them.
+👉Task 4: Using Variables
+Now that you have declared variables, let's use them to perform a simple task. Create a bash script that takes two variables (numbers) as input and prints their sum using those variables.
+👉Task 5: Using Built-in Variables
+Bash provides several built-in variables that hold useful information. Your task is to create a bash script that utilizes at least three different built-in variables to display relevant information.
+👉Task 6: Wildcards
+Wildcards are special characters used to perform pattern matching when working with files. Your task is to create a bash script that utilizes wildcards to list all the files with a specific extension in a directory.
+#Create a shell script file #script.sh
+#!/bin/bash
+#Task_1 Comments
+#This is single line comment
+<<comment
+this is multiple line comment
+comment
+#Task_2 Echo
+echo "This is BashBlaze-7-Days-of-Bash-Scripting-Challenge"
+
+#Task_3 Variables
+var_1="Hello"
+var_2="Connection"
+
+#Task_4 Using Variables
+echo "$var_1 $var_2 welcome to bash scripting challenge"
+#Task_5  Using Built-in Variables
+echo "My home directory - $HOME"
+echo "Where am I currently? - $PWD"
+echo "My hostname - $HOSTNAME"
+
+#Task_6 Wildcards
+echo "Files with .txt extension in the current directory:"
+ls *.txt
+
+# Provide execution permission with chmod 774 command
