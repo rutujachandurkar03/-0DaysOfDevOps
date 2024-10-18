@@ -1,0 +1,63 @@
+📦 What is a Package Manager?
+A package manager is a crucial tool that simplifies the process of installing, updating, and managing software on Linux systems. Whether it's the GUI-based software centers or powerful command-line tools like apt-get and yum, these tools ensure smooth management of software along with their dependencies.
+💡 Key Takeaway: A package isn't just an application—it can be a command-line tool or a software library essential for other programs to function. Understanding the package ecosystem is key for efficient system management!
+🖥 Systemctl & Systemd
+systemctl is a command-line tool used to manage system services and processes in Linux systems running the systemd service manager. From starting and stopping services to enabling or disabling them at boot, systemctl provides more control than the older service command.
+💡 Key Difference: While service is used for basic service management, systemctl is more feature-rich and preferred for modern Linux distributions.
+________________________________________
+📊 Task1 #Install Docker and Jenkins:
+Install Docker:
+Steps-
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+Install Jenkins:
+Steps-
+sudo apt update 
+sudo apt install openjdk-11-jdk -y 
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add –
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list' 
+sudo apt update
+sudo apt install jenkins –y
+ sudo systemctl start Jenkins
+ sudo systemctl enable jenkins
+
+
+📊 Task2 #Manage Jenkins Service:
+Stop the Jenkins service and post before and after screenshots.
+     sudo systemctl stop Jenkins
+sudo systemctl status Jenkins
+sudo systemctl start Jenkins
+sudo systemctl status Jenkins
+
+
+📊 Task3 # Automate Service Management:
+#Script
+#!/bin/bash
+
+echo "This script allows you to start or stop services using systemctl."
+
+# Prompt for the service name
+read -p "Enter the service name (e.g., docker, jenkins): " service
+
+# Prompt for the action (start/stop/restart)
+read -p "Enter the action (start/stop/restart): " action
+
+# Check if both service and action are provided
+if [[ -z "$service" || -z "$action" ]]; then
+  echo "Error: Both service and action must be provided."
+  exit 1
+fi
+
+# Execute the action and check for success/failure
+if sudo systemctl $action $service; then
+  echo "Successfully executed $action on $service."
+else
+  echo "Failed to execute $action on $service. Please check the service name and try again."
+  exit 1
+fi
+
+# Show the current status of the service
+sudo systemctl status $service
+
