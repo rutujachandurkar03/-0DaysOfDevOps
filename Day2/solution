@@ -1,0 +1,31 @@
+#What is Linux?
+Linux is an open-source operating system known for its performance, flexibility, and stability. It’s widely used in servers and cloud environments, supporting multi-user functionality and high security.
+
+#History of LINUX : Linux came from a Unix family, Linux is a free and open-source software operating system, which Linus Torvalds developed in September 1991.
+
+Linux File System Hierarchy :
+
+#Basic Commands :
+
+#pwd → it shows the present working directory
+#ls → it shows available files and directory list in the present working directory.
+#cd → it use for change directory 
+#clear → it use for clear screen 
+#whoami → it show currently login user name
+#history → it show list of previously used commands 
+#date → it show time and date
+
+#Create file or directory :
+
+#mkdir newFolder             make a new folder 'newFolder'
+#mkdir .NewFolder             make a hidden directory (also . before a file to make it hidden)
+#mkdir A B C D                 make multiple directories at the same time
+#mkdir /home/user/Mydirectory  # make a new folder in a specific location
+#mkdir -p A/B/C/D             # make a nested directory
+#touch newfile #create empty file, we can’t write data in a file, can’t edit or save file.
+
+𝐈𝐧𝐬𝐭𝐚𝐥𝐥𝐚𝐭𝐢𝐨𝐧 𝐨𝐟 𝐍𝐠𝐢𝐧𝐱 𝐨𝐧 𝐔𝐛𝐮𝐧𝐭𝐮:
+#sudo apt install nginx → Installs Nginx.
+#systemctl status nginx → Checks the status of Nginx, whether it’s running or stopped.
+#cd /var/www/html → The path where the index.html file is located.
+#sudo vim index.html → Edits the file to change the heading on the Nginx web page
