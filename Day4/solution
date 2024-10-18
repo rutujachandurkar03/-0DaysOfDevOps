@@ -1,0 +1,39 @@
+#Day 4 : #Basic Linux Shell Scripting for DevOps Engineers.
+
+👉 #Task1 #Explain in your own words and with examples what Shell Scripting means for DevOps.
+A shell script is a computer program designed to be run by the Unix shell, a command-line interpreter.
+Shell Scripting is writing a series of commands in a script file to automate tasks in the Unix/Linux shell. For DevOps, shell scripting is crucial for automating repetitive tasks, managing system configurations, deploying applications, and integrating various tools and processes in a CI/CD pipeline. It enhances efficiency, reduces errors, and saves time.'
+
+👉 #Task2 #What is #!/bin/bash? Can we write #!/bin/sh as well?
+#!/bin/bash is called a "shebang" line. It indicates that the script should be run using the Bash shell.
+#!/bin/bash: Uses Bash as the interpreter. It supports advanced features like arrays, associative arrays, and functions.
+#!/bin/sh: Uses the Bourne shell. It’s more POSIX-compliant and is generally compatible with different Unix shells.
+
+👉 #Task3 #Write a Shell Script that prints I will complete #90DaysOfDevOps challenge.
+#!/bin/bash
+echo "I will complete #90DaysOfDevOps challenge."
+
+👉 #Task4 #Write a Shell Script that takes user input, input from arguments, and prints the variables.
+#!/bin/bash
+# Get user input
+read -p "Enter your name: " name
+# Get input from command-line arguments
+arg1=$1
+arg2=$2
+# Print the variables
+echo "Your Name is : $name"
+echo "Message is $1 $2"
+
+👉 #Task5 #Provide an example of an If-Else statement in Shell Scripting by comparing two numbers.
+#!/bin/bash
+# Read two numbers from user input
+read -p "Enter the first number: " num1
+read -p "Enter the second number: " num2
+# Compare the numbers
+if [ "$num1" -gt "$num2" ]; then
+echo "$num1 is greater than $num2."
+elif [ "$num1" -lt "$num2" ]; then
+echo "$num1 is less than $num2."
+else
+echo "$num1 is equal to $num2."
+fi
