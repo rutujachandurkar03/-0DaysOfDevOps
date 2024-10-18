@@ -1,0 +1,36 @@
+👉Task1 #Understanding File Permissions in Linux-
+🔐 File permissions in Linux control who can read, write, and execute files or directories. Understanding this is crucial for managing security and access on Linux systems.
+1.	Types of Permissions:
+o	Read (r): View file contents.
+o	Write (w): Modify or delete the file.
+o	Execute (x): Run the file as a program.
+2.	Permission Structure: Each file has permissions for three categories:
+o	Owner (u)
+o	Group (g)
+o	Others (o)
+3.	Common Commands:
+•	ls -l: View permissions of files in a directory.
+•	chown: Change file ownership permissions.
+•	chmod: Change file user permissions.
+•	chgrp: Change  file group permissions.
+👉Task2 #Access Control Lists (ACL):
+🔐 Access Control Lists (ACLs) in Linux: Enhancing File Permissions.
+ACLs allow you to define fine-grained permissions beyond the basic owner, group, and others model. With ACLs, you can specify permissions for individual users or groups on a per-file or per-directory basis.
+Key Commands
+Viewing ACLs: getfacl filename
+Setting ACLs: setfacl -m u:username:rwx filename
+Removing ACLs: setfacl -x u:username filename
+Default ACLs (for directories): setfacl -d -m u:username:rwx directory_name
+👉Task3 #Understanding Sticky Bit, SUID, and SGID
+🔐 Linux offers powerful mechanisms for controlling access to files and directories beyond basic read, write, and execute permissions. Three key special permissions are Sticky Bit, Setuid (SUID), and Setgid (SGID).
+•	Sticky Bit: Controls deletion rights in shared directories.
+•	SUID: Elevates the privileges of an executable file to the file owner's.
+•	SGID: Ensures files in a directory inherit the group ownership.
+
+👉Task4 #Backup and Restore Permissions:
+
+🔐 Managing file and directory permissions is essential for system security and smooth operations. Sometimes, you need to back up and restore permissions — whether it’s for migration, troubleshooting, or recovery after an accidental change.
+Key Commands
+#Backing Up Permissions- #getfacl -R /path/to/directory > permissions_backup.acl
+# Restoring Permissions- # setfacl --restore=permissions_backup.acl
+
