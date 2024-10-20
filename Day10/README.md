@@ -1,3 +1,4 @@
+Day 10 Task: Log Analyzer and Report Generator
 Challenge Title: Log Analyzer and Report Generator
 Scenario
 You are a system administrator responsible for managing a network of servers. Every day, a log file is generated on each server containing important system events and error messages. As part of your daily tasks, you need to analyze these log files, identify specific events, and generate a summary report.
@@ -40,3 +41,5 @@ Submission
 Submit your completed script by creating a pull request or sending the script file to the challenge organizer.
 
 Good luck and happy scripting!
+
+← Previous Day | Next Day →
