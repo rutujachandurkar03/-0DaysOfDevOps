@@ -18,11 +18,14 @@ or
 bash
 Copy code
 python --version
-2.	Explore Python Data Types:
-o	Numeric Types: int, float, complex
-o	Sequence Types: str, list, tuple
-o	Mapping Type: dict
+
+
+3.	Explore Python Data Types:
+o	Numeric Types: int, float, complex  
+o	Sequence Types: str, list, tuple  
+o	Mapping Type: dict  
 o	Set Types: set, frozenset
 o	Boolean Type: bool
 o	None Type: None
+
 Python’s versatility and simplicity make it an ideal language for automating tasks and developing robust applications.
