@@ -31,9 +31,13 @@ RUN python todo/manage.py migrate
 CMD ["python", "todo/manage.py", "runserver","0.0.0.0:8000"]
 
 🔹 docker build – to build the Docker image
+
 🔹 docker run – to start the container
+
 🔹 docker push – to upload the image to a repository
+
 🔹 docker inspect – to verify configurations
+
 This project was a great hands-on experience in Dockerizing an application, setting up dependencies, and understanding best practices in containerization. I’m excited to continue building on these DevOps skills!
 
 
