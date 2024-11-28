@@ -1,12 +1,10 @@
-Your LinkedIn post is well-structured and insightful! Here's a slightly polished version to make it even more impactful:
-________________________________________
-Day 23 - Jenkins Freestyle Project for DevOps Engineers 🚀
-The #90DaysOfDevOps challenge continues, and today's task was an exciting dive into Jenkins Pipeline Projects! It’s been an incredible opportunity to showcase my DevOps skills and learn more about the power of CI/CD in modern software development.
-________________________________________
+
 What is CI/CD?
-🔄 Continuous Integration (CI): Automates the process of integrating code changes from multiple developers into a shared repository, ensuring smooth integration with builds, tests, and reviews.
+🔄 Continuous Integration (CI): Automates the process of integrating code changes from multiple developers into a shared repository, ensuring smooth integration 
+ with builds, tests, and reviews.
 ⚡ Continuous Delivery (CD): Takes it a step further by automating the release process, ensuring every build is ready for deployment with confidence and speed.
-________________________________________
+
+
 Task 1: Jenkins Pipeline for Django To-Do App
 Today, I created a Jenkins Pipeline that automates the build and deployment of my Django To-Do application.
 🔸 Stage 1: Code
@@ -15,8 +13,12 @@ Automatically pulls the latest code from my GitHub repository.
 Creates a Docker image named django-to-do from the repository's Dockerfile.
 🔸 Stage 3: Deploy
 Starts a container from the built image, exposing the app on port 8000.
-________________________________________
+
 Jenkins Pipeline:
+
+groovy
+Copy code
+
 pipeline {
     agent any
     stages {
@@ -37,11 +39,8 @@ pipeline {
         }
     }
 }
-________________________________________
-Jenkins Pipelines make it easy to automate repetitive tasks like code integration, containerization, and deployment.
- Docker ensures a consistent environment across all stages of development and deployment.
-Continuous Delivery helps ensure that every build is production-ready!
-________________________________________
-👉 Give this pipeline a try and let me know how it works for you! 
 
-#Jenkins #DevOps #CI/CD #Docker #Automation #Django #90DaysOfDevOps
+
+Jenkins Pipelines make it easy to automate repetitive tasks like code integration, containerization, and deployment.
+Docker ensures a consistent environment across all stages of development and deployment.
+Continuous Delivery helps ensure that every build is production-ready!
