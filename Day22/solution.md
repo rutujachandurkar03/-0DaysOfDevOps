@@ -6,8 +6,7 @@ I created a Jenkins pipeline that:
 4.	Runs automatically every hour 
 Pipeline Code:
 Here’s the pipeline code I used to automate these tasks:
-groovy
-Copy code
+
 
 
 pipeline {
@@ -18,14 +17,11 @@ pipeline {
                 echo 'Hello World'
             }   
         }
-
-        stage('Print Date') {
+            stage('Print Date') {
             steps {
                 sh 'date'
             }
-        }
-        
-        stage('Clone GitHub Repository') {
+        }    stage('Clone GitHub Repository') {
             steps {
                 git url: 'https://github.com/rutujachandurkar03/two-tier-flask-app.git', branch: 'master'
             }
