@@ -19,7 +19,8 @@ Jenkins Pipeline:
 
 pipeline {
    
-   agent any
+    
+     agent any
    
      stages {
      
