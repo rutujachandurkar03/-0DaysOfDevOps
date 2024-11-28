@@ -18,7 +18,7 @@ Jenkins Pipeline:
 
 pipeline {
     agent any
-    stages {
+        stages {
         stage('Code') {
             steps {
                 git url: "https://github.com/rutujachandurkar03/Django-to-do.git", branch: "master"
