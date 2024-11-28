@@ -3,7 +3,7 @@
 ## Overview
 This task focuses on enhancing the Jenkins Declarative Pipeline by integrating Docker. Docker commands such as `docker build` and `docker run` are incorporated directly into the pipeline stages, and an alternative approach using Docker Groovy syntax is explored to handle potential errors gracefully.
 
-## Pipeline Code with Docker Integration + Agents
+## Pipeline Code with Docker Integration
 
 Here’s the updated pipeline:
 
