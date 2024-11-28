@@ -9,7 +9,8 @@ Here’s the pipeline code I used to automate these tasks:
 
 
 
-pipeline {
+
+ pipeline {
 
     agent any
     
@@ -39,5 +40,5 @@ pipeline {
             }
         }
     }
-}
+  }
 
