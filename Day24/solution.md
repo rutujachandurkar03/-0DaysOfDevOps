@@ -1,4 +1,5 @@
 🔹 Task 1: GitHub Integration with Jenkins
+
 •	Forked the repository node-todo-cicd
 
 •	Configured GitHub WebHooks to trigger the Jenkins pipeline automatically upon every merge pull request.
@@ -6,6 +7,7 @@
 •	Ensured seamless integration between the GitHub repository and Jenkins for real-time CI/CD execution.
 
 🔹 Task 2: Docker Compose Deployment
+
 •	Created a Docker Compose file for the application, enabling multi-container orchestration.
 
 •	Added the docker-compose commands to the Jenkins pipeline to automate building and deploying the application.
