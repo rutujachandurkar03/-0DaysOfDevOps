@@ -10,18 +10,24 @@ Here’s the pipeline code I used to automate these tasks:
 
 
 pipeline {
+
     agent any
+    
     stages {
-        stage('Hello') {
+    
+       stage('Hello') {
             steps {
                 echo 'Hello World'
             }   
         }
-            stage('Print Date') {
+        
+       stage('Print Date') {
             steps {
                 sh 'date'
             }
-        }    stage('Clone GitHub Repository') {
+        } 
+        
+      stage('Clone GitHub Repository') {
             steps {
                 git url: 'https://github.com/rutujachandurkar03/two-tier-flask-app.git', branch: 'master'
             }
