@@ -17,6 +17,7 @@ Starts a container from the built image, exposing the app on port 8000.
 Jenkins Pipeline:
 
 
+
 pipeline {
    
     
@@ -43,6 +44,8 @@ pipeline {
         }
     }
 }
+
+
 
 
 Jenkins Pipelines make it easy to automate repetitive tasks like code integration, containerization, and deployment.
