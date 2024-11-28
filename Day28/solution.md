@@ -1,9 +1,9 @@
-# Jenkins Declarative Pipeline with Docker Integration and Agents
+# Jenkins Declarative Pipeline with Agents
 
 ## Overview
 This task focuses on enhancing the Jenkins Declarative Pipeline by integrating Docker and leveraging Jenkins agents for distributed builds. Docker commands such as `docker build` and `docker run` are incorporated directly into the pipeline stages, and an alternative approach using Docker Groovy syntax is explored to handle potential errors gracefully. Additionally, Jenkins agents are introduced to optimize workload distribution.
 
-## Pipeline Code with Docker Integration + Agents
+## Pipeline Code with Agents
 
 Here’s the updated pipeline:
 
