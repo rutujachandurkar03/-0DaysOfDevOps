@@ -1,7 +1,5 @@
-# Creating the answer-only part of the README.md file for download
 
-readme_content = """
-# Kubernetes Interview Questions - Answers Only
+# Kubernetes Interview Questions -
 
 This document provides the answers to a collection of important Kubernetes interview questions to help you prepare for a Kubernetes-related job interview.
 
