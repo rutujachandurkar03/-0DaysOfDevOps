@@ -1,96 +1,97 @@
-# Day 39: AWS and IAM Basics ☁
+# **Day 39: AWS and IAM Basics**
 
-## **AWS: Getting Started with Automation**
-By now, you have likely created multiple EC2 instances and manually installed applications like Jenkins and Docker. Today, let's take the next step toward automation. Sounds interesting? 🤯
-
----
-
-### **AWS Overview**
-Amazon Web Services (AWS) is one of the most popular cloud providers, offering a **Free Tier** for students and cloud enthusiasts. This allows hands-on practice without incurring costs while learning.
-
-- **[Sign up for AWS Free Tier](https://aws.amazon.com/free/)** to explore its offerings.
-- Learn more about **[AWS](https://aws.amazon.com/)**.
+## **Overview**
+This document outlines the key learnings and tasks completed on Day 39 of the AWS learning journey. The focus was on automating EC2 instance setup using User Data and exploring IAM (Identity and Access Management) concepts, including creating roles for various use cases.
 
 ---
+
+## **AWS**
 
 ### **User Data in AWS**
-When launching an EC2 instance in AWS, you can pass **user data** to perform automated configuration tasks and run scripts. This saves time and reduces manual effort during instance setup.
+When launching an EC2 instance, you can pass **User Data** to:
+- Automate configuration tasks.
+- Install applications like Apache, Docker, or Jenkins.
 
-#### **Types of User Data**
-1. **Shell Scripts**: Execute commands automatically after the instance starts.
-2. **Cloud-init Directives**: Automate instance configuration using cloud-init.
+**Types of User Data**:
+- **Shell Scripts**: For running commands.
+- **Cloud-init Directives**: For more complex setups.
 
-#### **Ways to Pass User Data**
-- **Plain Text**: Enter directly in the launch instance wizard.
-- **File Upload**: Useful when using CLI tools.
-- **Base64-encoded Text**: For API calls.
+**How to Pass User Data**:
+- Directly in the **Launch Instance Wizard**.
+- As a file (useful for CLI or scripts).
+- Base64-encoded (for API calls).
 
-#### **Benefits**
-Automating installations (e.g., Apache, Docker, Jenkins) with user data makes instance management more efficient.
-
-- Learn more about **[User Data in AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)**.
-
----
-
-### **IAM: Identity and Access Management**
-AWS IAM helps you securely control access to AWS resources by managing authentication and authorization.
-
-#### **Core Concepts**
-- **Users**: Individual accounts with specific permissions.
-- **Groups**: Logical collections of users sharing permissions.
-- **Roles**: Temporary permissions assigned to AWS resources or users.
-
-- Learn more about **[IAM](https://aws.amazon.com/iam/)**.
-- Dive deeper into **[IAM Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)**.
+This feature simplifies repetitive setup tasks and ensures consistency.
 
 ---
 
-## **Tasks**
+## **IAM (Identity and Access Management)**
+IAM helps securely manage access to AWS resources by controlling authentication and authorization.
 
-### **Task 1: Automate Jenkins Installation Using User Data**
-1. **Launch an EC2 Instance**:
-   - Use the AWS Management Console to launch a new EC2 instance.
-   - Provide user data to automate Jenkins installation.
-
-#### **Sample User Data Script (Ubuntu)**
-```bash
-#!/bin/bash
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install -y openjdk-11-jdk
-wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-echo "deb http://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list
-sudo apt update -y
-sudo apt install -y jenkins
-sudo systemctl start jenkins
-sudo systemctl enable jenkins
-echo "Jenkins installed and ready to use!"
-```
-2. **Verify Installation**:
-   - Once the server shows up in the console, copy its IP address.
-   - Open the IP address in your browser; the Jenkins page should be visible.
-
-3. **Submit Proof**:
-   - Take screenshots of:
-     - The **User Data** provided during instance creation.
-     - The **Jenkins landing page**.
+### **Key Concepts**:
+1. **Users**:
+   - Represent individual identities needing access.
+   - Have specific credentials like passwords or access keys.
+2. **Groups**:
+   - Collections of users with shared permissions.
+   - Simplifies management by assigning permissions to the group instead of individual users.
+3. **Roles**:
+   - Temporary permissions assigned to AWS services or external entities.
+   - Avoids sharing long-term credentials.
 
 ---
 
-### **Task 2: Learn and Create IAM Roles**
-1. **Learn IAM Concepts**:
-   - Understand **Users**, **Groups**, and **Roles**.
-   - Document these in your own terms.
+## **Tasks Completed**
 
-2. **Create IAM Roles**:
-   - Create the following roles in IAM:
-     - `DevOps-User`
-     - `Test-User`
-     - `Admin`
+### **Task 1: Automate Jenkins Installation on EC2**
+- **Goal**: Launch an EC2 instance with Jenkins pre-installed using **User Data**.
+- **Steps**:
+  1. Created a User Data script:
+     ```bash
+     #!/bin/bash
+     sudo apt update
+     sudo apt install -y fontconfig openjdk-17-jre
+     java -version
+     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+       https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+     echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+       https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+       /etc/apt/sources.list.d/jenkins.list > /dev/null
+     sudo apt-get update
+     sudo apt-get install -y jenkins
+     sudo systemctl start jenkins
+     sudo systemctl enable jenkins
+     ```
+  2. Passed the script in the **Advanced Details > User Data** section during instance launch.
+  3. Verified Jenkins by accessing the instance IP on port `8080`.
+
+- **Outcome**: Successfully launched an EC2 instance with Jenkins running.
+
+### **Task 2: Create IAM Roles**
+- **Goal**: Create IAM roles for specific use cases.
+- **Roles Created**:
+  1. **DevOps-User**:
+     - Permissions: `AmazonEC2FullAccess`, `AWSCodePipelineFullAccess`, `AmazonS3FullAccess`.
+  2. **Test-User**:
+     - Permissions: `AmazonEC2ReadOnlyAccess`, `AWSCodeBuildReadOnlyAccess`, `AmazonS3ReadOnlyAccess`.
+  3. **Admin**:
+     - Permissions: `AdministratorAccess`.
 
 ---
 
-## **Share Your Progress**
-Post your progress on LinkedIn and inspire others to learn about AWS and IAM. 🎉
+## **Takeaways**
+- **User Data** simplifies EC2 instance setup, enabling automation and saving time.
+- **IAM Roles** provide secure and temporary access to AWS resources, enhancing security and flexibility.
+- **Cloud Skills**: Mastering automation and access management are key steps in becoming proficient with AWS.
 
-### **Happy Learning! :)**
+---
 
+## **Next Steps**
+- Dive deeper into AWS automation using CloudFormation and Terraform.
+- Explore advanced IAM configurations like service control policies (SCPs) and access analyzer.
+
+---
+
+**Happy Learning!** 🎉
+
+#AWS #IAM #CloudComputing #Automation #DevOps
